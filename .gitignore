@@ -1,0 +1,39 @@
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+*.pyc
+*.egg-info/
+*.egg
+dist/
+build/
+*.whl
+
+# uv lock file
+uv.lock
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Vector database
+chroma_db/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# macOS
+.DS_Store
+
+# Logs
+*.log
+logs/
+
+# Temp directories
+tmp/
+temp/
