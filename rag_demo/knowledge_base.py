@@ -6,7 +6,7 @@ from langchain_community.embeddings import DashScopeEmbeddings
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 import dotenv
 
-import app_config as cfg
+import rag_demo.app_config as cfg
 
 dotenv.load_dotenv()
 

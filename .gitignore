@@ -37,3 +37,4 @@ logs/
 # Temp directories
 tmp/
 temp/
+data/md5.txt

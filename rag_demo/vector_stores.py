@@ -1,5 +1,5 @@
 from langchain_chroma import Chroma
-import app_config as cfg
+import rag_demo.app_config as cfg
 from langchain_community.embeddings import DashScopeEmbeddings
 import os
 import dotenv
@@ -18,9 +18,9 @@ class VectorStoreService(object):
             persist_directory=cfg.persist_directory,
         )
 
-    def get_retrirver(self):
+    def get_retriever(self):
         return self.vectore_store.as_retriever(
-            search_kwargs={"k": cfg.similarity_threshold}
+            search_kwargs={"k": cfg.top_k}
         )
 
 
@@ -29,5 +29,5 @@ if __name__ == "__main__":
         DashScopeEmbeddings(
             model="text-embedding-v4", dashscope_api_key=DASHSCOPE_API_KEY
         )
-    ).get_retrirver()
-    print(retriever.invoke("什么是三原色？"))
+    ).get_retriever()
+    print(retriever.invoke("胸围"))
