@@ -1,5 +1,5 @@
 import yaml
-from .path_tool import get_abs_path
+from utils.path_tool import get_abs_path
 
 
 def load_rag_config(

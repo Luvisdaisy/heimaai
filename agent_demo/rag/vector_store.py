@@ -1,16 +1,16 @@
-from langchain_chroma import Chroma
-from ..utils.config_handler import chroma_cfg
-from ..model.factory import embedding_model
-from langchain_text_splitters import RecursiveCharacterTextSplitter
 import os
-from ..utils.path_tool import get_abs_path
-from ..utils.file_handler import (
+from langchain_chroma import Chroma
+from utils.config_handler import chroma_cfg
+from model.factory import embedding_model
+from langchain_text_splitters import RecursiveCharacterTextSplitter
+from utils.path_tool import get_abs_path
+from utils.file_handler import (
     pdf_loader,
     txt_loader,
     listdir_with_allowed_types,
     get_md5_hex,
 )
-from ..utils.logger_handler import logger
+from utils.logger_handler import logger
 
 
 class VectorStoreService:
@@ -58,7 +58,8 @@ class VectorStoreService:
             return []
 
         allowed_files = listdir_with_allowed_types(
-            chroma_cfg["data_path"], tuple(chroma_cfg["allowed_file_types"])
+            get_abs_path(chroma_cfg["data_path"]),
+            tuple(chroma_cfg["allow_knowledge_file_type"]),
         )
 
         for path in allowed_files:

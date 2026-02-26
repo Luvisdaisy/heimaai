@@ -1,6 +1,6 @@
 import os
 import hashlib
-from logger_handler import logger
+from utils.logger_handler import logger
 from langchain_community.document_loaders import PyPDFLoader, TextLoader
 
 
@@ -32,7 +32,7 @@ def listdir_with_allowed_types(directory: str, allowed_types: tuple[str]):
 
     if not os.path.isdir(directory):
         logger.error(f"Directory does not exist: {directory}")
-        return allowed_types
+        return []
 
     for f in os.listdir(directory):
         if f.endswith(allowed_types):

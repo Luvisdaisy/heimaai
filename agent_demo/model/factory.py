@@ -3,7 +3,7 @@ from typing import Optional
 from langchain_community.embeddings import DashScopeEmbeddings
 from langchain_community.chat_models.tongyi import ChatTongyi, BaseChatModel
 from langchain_core.embeddings import Embeddings
-from ..utils.config_handler import rag_cfg
+from utils.config_handler import rag_cfg
 import os
 import dotenv
 
